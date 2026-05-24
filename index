@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guns Of The Patriots</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0b0b12;
+    color:white;
+    font-family:'Orbitron', sans-serif;
+    overflow-x:hidden;
+}
+
+header{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+    url('https://images.unsplash.com/photo-1520034475321-cbe63696469a?q=80&w=2070&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:72px;
+    color:#a855f7;
+    margin-bottom:20px;
+    text-shadow:0 0 25px rgba(168,85,247,0.6);
+}
+
+.hero p{
+    font-size:20px;
+    color:#d1d5db;
+    line-height:1.8;
+}
+
+.hero button{
+    margin-top:35px;
+    padding:16px 40px;
+    border:none;
+    border-radius:12px;
+    background:#7c3aed;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.hero button:hover{
+    background:#9333ea;
+    transform:translateY(-3px);
+}
+
+.section{
+    padding:90px 20px;
+    max-width:1300px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:50px;
+    color:#a855f7;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:25px;
+}
+
+.card{
+    background:#161622;
+    border:1px solid #2a2a35;
+    border-radius:18px;
+    padding:30px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#7c3aed;
+    box-shadow:0 0 25px rgba(124,58,237,0.2);
+}
+
+.card h3{
+    color:#c084fc;
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+.card p{
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+.leaderboard{
+    background:#161622;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid #2a2a35;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#7c3aed;
+    padding:18px;
+    text-align:center;
+}
+
+td{
+    padding:16px;
+    text-align:center;
+    border-bottom:1px solid #2a2a35;
+}
+
+tr:hover{
+    background:#1f1f2d;
+}
+
+.top1{
+    background:rgba(255,215,0,0.08);
+}
+
+.top2{
+    background:rgba(192,192,192,0.08);
+}
+
+.top3{
+    background:rgba(205,127,50,0.08);
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:20px;
+}
+
+.stat-box{
+    background:#161622;
+    border-radius:18px;
+    padding:30px;
+    text-align:center;
+    border:1px solid #2a2a35;
+}
+
+.stat-box h2{
+    color:#a855f7;
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.stat-box p{
+    color:#cbd5e1;
+}
+
+footer{
+    padding:40px;
+    text-align:center;
+    color:#666;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:48px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.section-title{
+    font-size:32px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+<div class="hero">
+
+<h1>Guns Of The Patriots</h1>
+
+<p>
+Beginner friendly. Organized. Active.
+Focused on growth, chains, ranked wars, and building a strong faction community.
+</p>
+
+<button onclick="document.getElementById('leaderboard').scrollIntoView({behavior:'smooth'})">
+View Leaderboard
+</button>
+
+</div>
+
+</header>
+
+<section class="section">
+
+<h2 class="section-title">Faction Overview</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>⚔️ Ranked Wars</h3>
+<p>
+Organized participation with consistent member contribution tracking and performance scoring.
+</p>
+</div>
+
+<div class="card">
+<h3>🔥 Chain Activity</h3>
+<p>
+Daily activity monitoring, chain contribution tracking, and participation incentives.
+</p>
+</div>
+
+<div class="card">
+<h3>📈 Growth Focused</h3>
+<p>
+Beginner friendly environment focused on helping members improve steadily.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">Faction Stats</h2>
+
+<div class="stats">
+
+<div class="stat-box">
+<h2 id="memberCount">0</h2>
+<p>Tracked Members</p>
+</div>
+
+<div class="stat-box">
+<h2 id="topScore">0</h2>
+<p>Highest Score</p>
+</div>
+
+<div class="stat-box">
+<h2>24/7</h2>
+<p>Activity Tracking</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="leaderboard">
+
+<h2 class="section-title">Live Leaderboard</h2>
+
+<div class="leaderboard">
+
+<table>
+
+<thead>
+<tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+<th>RW</th>
+<th>Chain</th>
+<th>Xan</th>
+<th>OD</th>
+<th>Activity</th>
+</tr>
+</thead>
+
+<tbody id="leaderboardBody">
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<footer>
+Guns Of The Patriots • Live Google Sheets Powered Leaderboard
+</footer>
+
+<script>
+
+const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSabOZ0fRqWJ27idJ-RE93wESZRBQJa3IHFKE8irfT5h0KrpxRe7aaZT0RbeT7CPPslUKro6Kf7EY6J/pub?gid=1172746887&single=true&output=csv";
+
+fetch(csvUrl)
+.then(response => response.text())
+.then(csv => {
+
+    const rows = csv.trim().split("\n").slice(1);
+
+    const tbody = document.getElementById("leaderboardBody");
+
+    document.getElementById("memberCount").innerText = rows.length;
+
+    if(rows.length > 0){
+        const first = rows[0].split(",");
+        document.getElementById("topScore").innerText = first[2];
+    }
+
+    rows.forEach((row, index) => {
+
+        const cols = row.split(",");
+
+        const tr = document.createElement("tr");
+
+        if(index === 0) tr.classList.add("top1");
+        if(index === 1) tr.classList.add("top2");
+        if(index === 2) tr.classList.add("top3");
+
+        tr.innerHTML = `
+        <td>${cols[0]}</td>
+        <td>${cols[1]}</td>
+        <td>${cols[2]}</td>
+        <td>${cols[3]}</td>
+        <td>${cols[4]}</td>
+        <td>${cols[5]}</td>
+        <td>${cols[6]}</td>
+        <td>${cols[7]}</td>
+        `;
+
+        tbody.appendChild(tr);
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
